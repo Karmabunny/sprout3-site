@@ -1,7 +1,6 @@
-<phpunit bootstrap="src/sprout/phpunit_bootstrap.php">
+<phpunit bootstrap="src/index.php">
 	<testsuites>
 		<testsuite name="all">
-			<directory>src/sprout/tests/</directory>
 			<directory>src/modules/*/tests/</directory>
 		</testsuite>
 	</testsuites>
