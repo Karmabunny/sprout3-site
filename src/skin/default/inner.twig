@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 
-{% set browser_title = browser_title ?: sprout.navigation.buildBrowserTitle(page_title) %}
+{% if not (browser_title ?? false) %}
+    {% set browser_title = sprout.navigation.buildBrowserTitle(page_title) %}
+{% endif %}
+
 
 {% if not sprout.social.meta.hasTitle() %}
     {% do sprout.social.meta.setTitle(page_title) %}
@@ -18,7 +21,7 @@
 
     <title>{{ browser_title }}</title>
 
-    {% if canonical_url %}
+    {% if canonical_url ?? false %}
         <link ref="canonical" href="{{ canonical_url }}" />
     {% endif %}
 
