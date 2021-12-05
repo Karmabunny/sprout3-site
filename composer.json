@@ -1,36 +1,17 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
+    "name": "karmabunny/sprout3-site",
     "config": {
         "optimize-autoloader": true,
         "sort-packages": true,
-        "vendor-dir": "src/vendor",
         "platform": {
             "php": "7.3"
         }
     },
     "autoload": {
         "psr-4": {
-            "Sprout\\": "src/sprout",
             "SproutModules\\Karmabunny\\": "src/modules"
-        },
-        "files": [
-            "src/sprout/composer_bootstrap.php"
-        ]
-    },
-    "require": {
-        "davechild/textstatistics": "^1.0",
-        "karmabunny/kb": "^2.19",
-        "karmabunny/pdb": "^0.11.11",
-        "karmabunny/rdb": "^1.11",
-        "karmabunny/router": "^1.4",
-        "phpmailer/phpmailer": "^6.5",
-        "setasign/fpdi": "^2.3",
-        "setasign/tfpdf": "^1.32",
-        "twig/twig": "^3.3"
-    },
-    "require-dev": {
-        "karmabunny/nstrack": "^1.0",
-        "phpunit/phpunit": "^7"
+        }
     },
     "extra": {
         "locals": {
@@ -41,9 +22,16 @@
         }
     },
     "scripts": {
-        "test": "phpunit",
-        "nstrack": "nstrack",
         "serve": "@php -S 0.0.0.0:8080 -t src src/index.php",
         "patch-locals": "@php tools/patch_locals.php"
+    },
+    "repositories": {
+        "sprout3": {
+            "type": "path",
+            "url": "../sprout3"
+        }
+    },
+    "require": {
+        "karmabunny/sprout": "dev-master"
     }
 }
