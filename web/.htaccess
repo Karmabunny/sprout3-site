@@ -1,0 +1,19 @@
+
+# Turn on URL rewriting
+RewriteEngine On
+
+# If you are having trouble with the friendly urls, try this:
+# RewriteBase /your/web/dir/
+
+# Protect files from being viewed
+RewriteRule \.(svn|git|sh) - [F,L]
+
+# Protect secure files from being viewed
+RewriteRule ^files/sec_ - [F,L]
+
+# Allow any files or directories that exist to be displayed directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite all other URLs to index.php/URL
+RewriteRule .* index.php?kohana_uri=$0 [QSA,PT,L]

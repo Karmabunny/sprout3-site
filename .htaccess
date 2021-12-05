@@ -1,5 +1,5 @@
 # Sprout 3 top-level htaccess file.
 
-# Rewrite all traffic into the /src directory
+# Rewrite all traffic into the /web directory
 RewriteEngine on
-RewriteRule ^.*$ /src/$0
+RewriteRule ^.*$ /web/$0
