@@ -7,9 +7,9 @@
         <column name="date_modified" type="DATETIME"/>
 
         <column name="text" type="TEXT"/>
-        <column name="meta_keywords" type="VARCHAR(200)"/>
-        <column name="meta_description" type="VARCHAR(200)"/>
-        <column name="alt_browser_title" type="VARCHAR(200)"/>
+        <column name="meta_keywords" type="VARCHAR(200)" default="" />
+        <column name="meta_description" type="VARCHAR(200)" default="" />
+        <column name="alt_browser_title" type="VARCHAR(200)" default="" />
 
         <primary>
             <col name="id"/>
@@ -18,7 +18,7 @@
             <col name="subsite_id"/>
         </index>
         <default_records>
-            <record subsite_id="1" text="&lt;p&gt;This is the default home page text.&lt;/p&gt;" />
+            <record subsite_id="1" text="&lt;p&gt;This is the default home page text.&lt;/p&gt;" date_added="NOW()" date_modified="NOW()" />
         </default_records>
     </table>
 
