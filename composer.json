@@ -22,7 +22,7 @@
         }
     },
     "scripts": {
-        "serve": "@php -S 0.0.0.0:8080 -t src src/index.php",
+        "serve": "@php -S 0.0.0.0:8080 -t web web/index.php",
         "patch-locals": "@php tools/patch_locals.php"
     },
     "repositories": {
