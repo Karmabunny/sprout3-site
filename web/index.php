@@ -18,9 +18,16 @@ define('STORAGE_PATH', BASE_PATH . 'storage' . DIRECTORY_SEPARATOR);
 define('DOCROOT', BASE_PATH . 'src' . DIRECTORY_SEPARATOR);
 define('KOHANA', basename(__FILE__));
 
+ini_set('display_errors', '1');
+
 // This file contains a class with a methods for determining the details of
 // the very initial environment, prior to the rest of the system coming up
 require DOCROOT . 'config/_bootstrap_config.php';
+
+// Define the website environment status.
+if (file_exists(DOCROOT . 'config/dev_hosts.php')) {
+    require DOCROOT . 'config/dev_hosts.php';
+}
 
 // The composer autoloader.
 require VENDOR_PATH . 'autoload.php';

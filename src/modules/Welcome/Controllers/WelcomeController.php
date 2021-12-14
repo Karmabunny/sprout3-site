@@ -382,34 +382,23 @@ class WelcomeController extends Controller
 
 
     /**
-     * Generate a dev hosts config, which contains the existing config and the current hostname
+     * Generate a dev hosts config.
      *
      * @return string
      */
     private static function genDevHostsConfig()
     {
-        if (file_exists(DOCROOT . 'config/dev_hosts.php')) {
-            require DOCROOT . 'config/dev_hosts.php';
-            if (@is_array($dev_hosts)) {
-                $dev_hosts = array_filter($dev_hosts);
-            }
-        }
-        if (empty($dev_hosts)) {
-            $dev_hosts = [];
-        }
-        $dev_hosts[] = php_uname('n');
-        $dev_hosts = array_unique($dev_hosts);
+        $hostname = addslashes(php_uname('n'));
 
-        $lines = [
-            '<?php',
-            '$dev_hosts = ['
-        ];
-        foreach ($dev_hosts as $host) {
-            $lines[] = "    '" . addslashes($host) . "',";
-        }
-        $lines[] = '];';
-
-        return implode("\n", $lines);
+        return "<?php
+if (in_array(php_uname('n'), [
+    'localhost',
+    '{$hostname}',
+])) {
+    define('IN_PRODUCTION', false);
+    return;
+}
+";
     }
 
 
