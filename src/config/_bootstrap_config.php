@@ -24,6 +24,21 @@ class BootstrapConfig
 
 
     /**
+     * Toggle Kohana caching for files and configurations.
+     */
+    const ENABLE_KOHANA_CACHE = false;
+
+
+    /**
+     * Copy media assets into the target web folder.
+     *
+     * This assumes the web server (nginx/apache) will pick up the real file
+     * before it defers to the PHP application.
+     */
+    const ENABLE_MEDIA_CACHE = IN_PRODUCTION;
+
+
+    /**
      * Specify what the protocol and/or hostname which should be for requests
      * If this doesn't match the current values, then a 301 redirect will occur
      *
