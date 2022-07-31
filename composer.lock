@@ -4,24 +4,27 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bfda8f73f21c8ed264be5e02d65bf780",
+    "content-hash": "c8bdfc767b4bd9cd9cf1b892e806c22f",
     "packages": [
         {
             "name": "colinmollenhour/credis",
-            "version": "v1.12.1",
+            "version": "v1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/colinmollenhour/credis.git",
-                "reference": "c27faa11724229986335c23f4b6d0f1d8d6547fb"
+                "reference": "85df015088e00daf8ce395189de22c8eb45c8d49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/colinmollenhour/credis/zipball/c27faa11724229986335c23f4b6d0f1d8d6547fb",
-                "reference": "c27faa11724229986335c23f4b6d0f1d8d6547fb",
+                "url": "https://api.github.com/repos/colinmollenhour/credis/zipball/85df015088e00daf8ce395189de22c8eb45c8d49",
+                "reference": "85df015088e00daf8ce395189de22c8eb45c8d49",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": ">=5.6.0"
+            },
+            "suggest": {
+                "ext-redis": "Improved performance for communicating with redis"
             },
             "type": "library",
             "autoload": {
@@ -46,9 +49,9 @@
             "homepage": "https://github.com/colinmollenhour/credis",
             "support": {
                 "issues": "https://github.com/colinmollenhour/credis/issues",
-                "source": "https://github.com/colinmollenhour/credis/tree/v1.12.1"
+                "source": "https://github.com/colinmollenhour/credis/tree/v1.13.1"
             },
-            "time": "2020-11-06T16:09:14+00:00"
+            "time": "2022-06-20T22:56:59+00:00"
         },
         {
             "name": "davechild/textstatistics",
@@ -107,19 +110,20 @@
         },
         {
             "name": "karmabunny/kb",
-            "version": "v2.19.14",
+            "version": "v2.29.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Karmabunny/kbphp.git",
-                "reference": "e744ad736464679e5ce0f6826f0eec0ab967061d"
+                "reference": "2e2ca01aff9e367e7a59d4465267dc9fdd4dde9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Karmabunny/kbphp/zipball/e744ad736464679e5ce0f6826f0eec0ab967061d",
-                "reference": "e744ad736464679e5ce0f6826f0eec0ab967061d",
+                "url": "https://api.github.com/repos/Karmabunny/kbphp/zipball/2e2ca01aff9e367e7a59d4465267dc9fdd4dde9b",
+                "reference": "2e2ca01aff9e367e7a59d4465267dc9fdd4dde9b",
                 "shasum": ""
             },
             "require": {
+                "php": ">=7.0",
                 "symfony/polyfill-php73": "*"
             },
             "require-dev": {
@@ -137,25 +141,37 @@
             "license": [
                 "MIT"
             ],
+            "authors": [
+                {
+                    "name": "Karmabunny",
+                    "email": "info@karmabunny.com.au"
+                }
+            ],
             "description": "Common KB utilities",
+            "keywords": [
+                "collections",
+                "karmabunny",
+                "kb",
+                "utilities"
+            ],
             "support": {
                 "issues": "https://github.com/Karmabunny/kbphp/issues",
-                "source": "https://github.com/Karmabunny/kbphp/tree/v2.19.14"
+                "source": "https://github.com/Karmabunny/kbphp/tree/v2.29.15"
             },
-            "time": "2021-10-20T22:20:45+00:00"
+            "time": "2022-07-24T13:24:58+00:00"
         },
         {
             "name": "karmabunny/pdb",
-            "version": "v0.11.20",
+            "version": "v0.14.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Karmabunny/kbpdb.git",
-                "reference": "473eff81ed8091feab9470ce3a0f35a57f6422f0"
+                "reference": "7d7670551a472c6e2018dfd9c2018a34f3e1909f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Karmabunny/kbpdb/zipball/473eff81ed8091feab9470ce3a0f35a57f6422f0",
-                "reference": "473eff81ed8091feab9470ce3a0f35a57f6422f0",
+                "url": "https://api.github.com/repos/Karmabunny/kbpdb/zipball/7d7670551a472c6e2018dfd9c2018a34f3e1909f",
+                "reference": "7d7670551a472c6e2018dfd9c2018a34f3e1909f",
                 "shasum": ""
             },
             "require": {
@@ -200,27 +216,27 @@
             ],
             "support": {
                 "issues": "https://github.com/Karmabunny/kbpdb/issues",
-                "source": "https://github.com/Karmabunny/kbpdb/tree/v0.11.20"
+                "source": "https://github.com/Karmabunny/kbpdb/tree/v0.14.22"
             },
-            "time": "2021-11-25T00:16:34+00:00"
+            "time": "2021-12-16T01:40:34+00:00"
         },
         {
             "name": "karmabunny/rdb",
-            "version": "v1.11.7",
+            "version": "v1.17.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Karmabunny/kbrdb.git",
-                "reference": "15b5482f070faf5bc24a8b63b2cc4d09dc586b5c"
+                "reference": "ed8b8320fb280e97b71cd1cf46ae8a125a96a135"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Karmabunny/kbrdb/zipball/15b5482f070faf5bc24a8b63b2cc4d09dc586b5c",
-                "reference": "15b5482f070faf5bc24a8b63b2cc4d09dc586b5c",
+                "url": "https://api.github.com/repos/Karmabunny/kbrdb/zipball/ed8b8320fb280e97b71cd1cf46ae8a125a96a135",
+                "reference": "ed8b8320fb280e97b71cd1cf46ae8a125a96a135",
                 "shasum": ""
             },
             "require": {
                 "colinmollenhour/credis": "^1",
-                "php": ">=7.0",
+                "php": ">=7.1",
                 "predis/predis": "^1"
             },
             "require-dev": {
@@ -251,22 +267,22 @@
             ],
             "support": {
                 "issues": "https://github.com/Karmabunny/kbrdb/issues",
-                "source": "https://github.com/Karmabunny/kbrdb/tree/v1.11.7"
+                "source": "https://github.com/Karmabunny/kbrdb/tree/v1.17.8"
             },
-            "time": "2021-10-20T03:33:43+00:00"
+            "time": "2022-07-11T02:48:27+00:00"
         },
         {
             "name": "karmabunny/router",
-            "version": "v1.4.6",
+            "version": "v1.5.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Karmabunny/kbrouter.git",
-                "reference": "bfd5bc0636d3479f28a6b560bac9d2fc6fae1cd0"
+                "reference": "80949cc438b68d44fdd9ee43d63b345979378705"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Karmabunny/kbrouter/zipball/bfd5bc0636d3479f28a6b560bac9d2fc6fae1cd0",
-                "reference": "bfd5bc0636d3479f28a6b560bac9d2fc6fae1cd0",
+                "url": "https://api.github.com/repos/Karmabunny/kbrouter/zipball/80949cc438b68d44fdd9ee43d63b345979378705",
+                "reference": "80949cc438b68d44fdd9ee43d63b345979378705",
                 "shasum": ""
             },
             "require-dev": {
@@ -297,77 +313,22 @@
             ],
             "support": {
                 "issues": "https://github.com/Karmabunny/kbrouter/issues",
-                "source": "https://github.com/Karmabunny/kbrouter/tree/v1.4.6"
+                "source": "https://github.com/Karmabunny/kbrouter/tree/v1.5.7"
             },
-            "time": "2021-10-26T23:24:41+00:00"
-        },
-        {
-            "name": "karmabunny/sprout",
-            "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../sprout3",
-                "reference": "0b7b05b9b65800511b187d22e0271087645ca094"
-            },
-            "require": {
-                "davechild/textstatistics": "^1.0",
-                "karmabunny/kb": "^2.19",
-                "karmabunny/pdb": "^0.11.11",
-                "karmabunny/rdb": "^1.11",
-                "karmabunny/router": "^1.4",
-                "phpmailer/phpmailer": "^6.5",
-                "setasign/fpdi": "^2.3",
-                "setasign/tfpdf": "^1.32",
-                "twig/twig": "^3.3"
-            },
-            "require-dev": {
-                "karmabunny/nstrack": "^1.0",
-                "phpunit/phpunit": "^7"
-            },
-            "type": "library",
-            "extra": {
-                "locals": {
-                    "karmabunny/kb": "../kbphp",
-                    "karmabunny/pdb": "../kbpdb",
-                    "karmabunny/rdb": "../kbrdb",
-                    "karmabunny/nstrack": "../nstrack"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Sprout\\": "src/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "phpunit"
-                ],
-                "nstrack": [
-                    "nstrack"
-                ],
-                "serve": [
-                    "@php -S 0.0.0.0:8080 -t src src/index.php"
-                ],
-                "patch-locals": [
-                    "@php tools/patch_locals.php"
-                ]
-            },
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2021-12-20T04:00:42+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
-            "version": "v6.5.3",
+            "version": "v6.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "baeb7cde6b60b1286912690ab0693c7789a31e71"
+                "reference": "9400f305a898f194caff5521f64e5dfa926626f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/baeb7cde6b60b1286912690ab0693c7789a31e71",
-                "reference": "baeb7cde6b60b1286912690ab0693c7789a31e71",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/9400f305a898f194caff5521f64e5dfa926626f3",
+                "reference": "9400f305a898f194caff5521f64e5dfa926626f3",
                 "shasum": ""
             },
             "require": {
@@ -379,11 +340,11 @@
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
                 "doctrine/annotations": "^1.2",
-                "php-parallel-lint/php-console-highlighter": "^0.5.0",
-                "php-parallel-lint/php-parallel-lint": "^1.3",
+                "php-parallel-lint/php-console-highlighter": "^1.0.0",
+                "php-parallel-lint/php-parallel-lint": "^1.3.2",
                 "phpcompatibility/php-compatibility": "^9.3.5",
                 "roave/security-advisories": "dev-latest",
-                "squizlabs/php_codesniffer": "^3.6.0",
+                "squizlabs/php_codesniffer": "^3.6.2",
                 "yoast/phpunit-polyfills": "^1.0.0"
             },
             "suggest": {
@@ -424,7 +385,7 @@
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
             "support": {
                 "issues": "https://github.com/PHPMailer/PHPMailer/issues",
-                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.5.3"
+                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.6.3"
             },
             "funding": [
                 {
@@ -432,20 +393,91 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-11-25T16:34:11+00:00"
+            "time": "2022-06-20T09:21:02+00:00"
         },
         {
-            "name": "predis/predis",
-            "version": "v1.1.9",
+            "name": "phpoption/phpoption",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/predis/predis.git",
-                "reference": "c50c3393bb9f47fa012d0cdfb727a266b0818259"
+                "url": "https://github.com/schmittjoh/php-option.git",
+                "reference": "eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/predis/predis/zipball/c50c3393bb9f47fa012d0cdfb727a266b0818259",
-                "reference": "c50c3393bb9f47fa012d0cdfb727a266b0818259",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15",
+                "reference": "eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4.1",
+                "phpunit/phpunit": "^6.5.14 || ^7.5.20 || ^8.5.19 || ^9.5.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpOption\\": "src/PhpOption/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "https://github.com/schmittjoh"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                }
+            ],
+            "description": "Option Type for PHP",
+            "keywords": [
+                "language",
+                "option",
+                "php",
+                "type"
+            ],
+            "support": {
+                "issues": "https://github.com/schmittjoh/php-option/issues",
+                "source": "https://github.com/schmittjoh/php-option/tree/1.8.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpoption/phpoption",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-12-04T23:24:31+00:00"
+        },
+        {
+            "name": "predis/predis",
+            "version": "v1.1.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/predis/predis.git",
+                "reference": "a2fb02d738bedadcffdbb07efa3a5e7bd57f8d6e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/predis/predis/zipball/a2fb02d738bedadcffdbb07efa3a5e7bd57f8d6e",
+                "reference": "a2fb02d738bedadcffdbb07efa3a5e7bd57f8d6e",
                 "shasum": ""
             },
             "require": {
@@ -490,7 +522,7 @@
             ],
             "support": {
                 "issues": "https://github.com/predis/predis/issues",
-                "source": "https://github.com/predis/predis/tree/v1.1.9"
+                "source": "https://github.com/predis/predis/tree/v1.1.10"
             },
             "funding": [
                 {
@@ -498,7 +530,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-10-05T19:02:38+00:00"
+            "time": "2022-01-05T17:46:08+00:00"
         },
         {
             "name": "setasign/fpdi",
@@ -627,21 +659,97 @@
             "time": "2020-08-31T07:28:46+00:00"
         },
         {
+            "name": "sproutcms/cms",
+            "version": "3.2.x-dev",
+            "dist": {
+                "type": "path",
+                "url": "../sprout3",
+                "reference": "ca2d00a536b80df0dc4e0e6e2b247b8b9cca786d"
+            },
+            "require": {
+                "davechild/textstatistics": "^1.0",
+                "karmabunny/kb": "^2.19",
+                "karmabunny/pdb": "^0.14.21",
+                "karmabunny/rdb": "^1.11",
+                "karmabunny/router": "^1.4",
+                "phpmailer/phpmailer": "^6.5",
+                "setasign/fpdi": "^2.3",
+                "setasign/tfpdf": "^1.32",
+                "twig/twig": "^3.3",
+                "vlucas/phpdotenv": "^3"
+            },
+            "require-dev": {
+                "karmabunny/nstrack": "^1.0",
+                "phpcompatibility/php-compatibility": "^9.3",
+                "phpstan/phpstan": "^1.5",
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "extra": {
+                "locals": {
+                    "karmabunny/kb": "../kbphp",
+                    "karmabunny/pdb": "../kbpdb",
+                    "karmabunny/rdb": "../kbrdb",
+                    "karmabunny/nstrack": "../nstrack"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sprout\\": "src/sprout"
+                },
+                "files": [
+                    "src/sprout/preboot.php"
+                ]
+            },
+            "scripts": {
+                "register-phpcs": [
+                    "phpcs --config-set installed_paths src/vendor/phpcompatibility/php-compatibility"
+                ],
+                "post-install-cmd": [
+                    "@register-phpcs"
+                ],
+                "post-update-cmd": [
+                    "@register-phpcs"
+                ],
+                "compat": [
+                    "phpcs -p --standard=phpcs.xml --colors --extensions=php"
+                ],
+                "analyse": [
+                    "phpstan analyse -c phpstan.neon"
+                ],
+                "test": [
+                    "phpunit --testdox --configuration phpunit.xml.dist"
+                ],
+                "nstrack": [
+                    "nstrack"
+                ],
+                "patch-locals": [
+                    "@php tools/patch_locals.php"
+                ]
+            },
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.23.0",
+            "version": "v1.26.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "46cd95797e9df938fdd2b03693b5fca5e64b01ce"
+                "reference": "6fd1b9a79f6e3cf65f9e679b23af304cd9e010d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/46cd95797e9df938fdd2b03693b5fca5e64b01ce",
-                "reference": "46cd95797e9df938fdd2b03693b5fca5e64b01ce",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/6fd1b9a79f6e3cf65f9e679b23af304cd9e010d4",
+                "reference": "6fd1b9a79f6e3cf65f9e679b23af304cd9e010d4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
+            },
+            "provide": {
+                "ext-ctype": "*"
             },
             "suggest": {
                 "ext-ctype": "For best performance"
@@ -649,7 +757,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.23-dev"
+                    "dev-main": "1.26-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -657,12 +765,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Ctype\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -687,7 +795,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.23.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.26.0"
             },
             "funding": [
                 {
@@ -703,24 +811,27 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-19T12:13:01+00:00"
+            "time": "2022-05-24T11:49:31+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.23.1",
+            "version": "v1.26.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6"
+                "reference": "9344f9cb97f3b19424af1a21a3b0e75b0a7d8d7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9174a3d80210dca8daa7f31fec659150bbeabfc6",
-                "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9344f9cb97f3b19424af1a21a3b0e75b0a7d8d7e",
+                "reference": "9344f9cb97f3b19424af1a21a3b0e75b0a7d8d7e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
+            },
+            "provide": {
+                "ext-mbstring": "*"
             },
             "suggest": {
                 "ext-mbstring": "For best performance"
@@ -728,7 +839,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.23-dev"
+                    "dev-main": "1.26-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -736,12 +847,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -767,7 +878,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.23.1"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.26.0"
             },
             "funding": [
                 {
@@ -783,20 +894,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-27T12:26:48+00:00"
+            "time": "2022-05-24T11:49:31+00:00"
         },
         {
             "name": "symfony/polyfill-php73",
-            "version": "v1.23.0",
+            "version": "v1.26.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php73.git",
-                "reference": "fba8933c384d6476ab14fb7b8526e5287ca7e010"
+                "reference": "e440d35fa0286f77fb45b79a03fedbeda9307e85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/fba8933c384d6476ab14fb7b8526e5287ca7e010",
-                "reference": "fba8933c384d6476ab14fb7b8526e5287ca7e010",
+                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/e440d35fa0286f77fb45b79a03fedbeda9307e85",
+                "reference": "e440d35fa0286f77fb45b79a03fedbeda9307e85",
                 "shasum": ""
             },
             "require": {
@@ -805,7 +916,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.23-dev"
+                    "dev-main": "1.26-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -813,12 +924,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php73\\": ""
-                },
                 "files": [
                     "bootstrap.php"
                 ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php73\\": ""
+                },
                 "classmap": [
                     "Resources/stubs"
                 ]
@@ -846,7 +957,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php73/tree/v1.23.0"
+                "source": "https://github.com/symfony/polyfill-php73/tree/v1.26.0"
             },
             "funding": [
                 {
@@ -862,20 +973,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-19T12:13:01+00:00"
+            "time": "2022-05-24T11:49:31+00:00"
         },
         {
             "name": "twig/twig",
-            "version": "v3.3.4",
+            "version": "v3.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "65cb6f0b956485e1664f13d023c55298a4bb59ca"
+                "reference": "e939eae92386b69b49cfa4599dd9bead6bf4a342"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/65cb6f0b956485e1664f13d023c55298a4bb59ca",
-                "reference": "65cb6f0b956485e1664f13d023c55298a4bb59ca",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/e939eae92386b69b49cfa4599dd9bead6bf4a342",
+                "reference": "e939eae92386b69b49cfa4599dd9bead6bf4a342",
                 "shasum": ""
             },
             "require": {
@@ -890,7 +1001,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.3-dev"
+                    "dev-master": "3.4-dev"
                 }
             },
             "autoload": {
@@ -926,7 +1037,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.3.4"
+                "source": "https://github.com/twigphp/Twig/tree/v3.4.1"
             },
             "funding": [
                 {
@@ -938,14 +1049,91 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-25T13:46:55+00:00"
+            "time": "2022-05-17T05:48:52+00:00"
+        },
+        {
+            "name": "vlucas/phpdotenv",
+            "version": "v3.6.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/phpdotenv.git",
+                "reference": "5b547cdb25825f10251370f57ba5d9d924e6f68e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/5b547cdb25825f10251370f57ba5d9d924e6f68e",
+                "reference": "5b547cdb25825f10251370f57ba5d9d924e6f68e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.4 || ^7.0 || ^8.0",
+                "phpoption/phpoption": "^1.5.2",
+                "symfony/polyfill-ctype": "^1.17"
+            },
+            "require-dev": {
+                "ext-filter": "*",
+                "ext-pcre": "*",
+                "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.21"
+            },
+            "suggest": {
+                "ext-filter": "Required to use the boolean validator.",
+                "ext-pcre": "Required to use most of the library."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dotenv\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                },
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com",
+                    "homepage": "https://github.com/vlucas"
+                }
+            ],
+            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "support": {
+                "issues": "https://github.com/vlucas/phpdotenv/issues",
+                "source": "https://github.com/vlucas/phpdotenv/tree/v3.6.10"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/vlucas/phpdotenv",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-12-12T23:02:06+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "karmabunny/sprout": 20
+        "sproutcms/cms": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
@@ -954,5 +1142,5 @@
     "platform-overrides": {
         "php": "7.3"
     },
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }
