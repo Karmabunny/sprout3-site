@@ -3,3 +3,8 @@
 *#
 node_modules
 vendor
+.env
+src/sprout
+src/files
+src/.htaccess
+src/index.php
