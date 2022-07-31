@@ -162,31 +162,41 @@
         },
         {
             "name": "karmabunny/pdb",
-            "version": "v0.14.22",
+            "version": "v0.19.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Karmabunny/kbpdb.git",
-                "reference": "7d7670551a472c6e2018dfd9c2018a34f3e1909f"
+                "reference": "b075aa3cd8546a152c9f53315fe9f1bd2ad1d2a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Karmabunny/kbpdb/zipball/7d7670551a472c6e2018dfd9c2018a34f3e1909f",
-                "reference": "7d7670551a472c6e2018dfd9c2018a34f3e1909f",
+                "url": "https://api.github.com/repos/Karmabunny/kbpdb/zipball/b075aa3cd8546a152c9f53315fe9f1bd2ad1d2a8",
+                "reference": "b075aa3cd8546a152c9f53315fe9f1bd2ad1d2a8",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
                 "ext-pdo": "*",
-                "karmabunny/kb": "^2.13",
+                "karmabunny/kb": "^2.28",
                 "php": "^7|^8"
             },
             "require-dev": {
+                "karmabunny/rdb": "^1.16",
                 "phpcompatibility/php-compatibility": "^9.3",
                 "phpstan/phpstan": "^0.12.83",
                 "phpunit/phpunit": "^9.5"
             },
+            "suggest": {
+                "karmabunny/rdb": "For persistent caching - using the PdbCacheRedis class"
+            },
             "type": "library",
+            "extra": {
+                "locals": {
+                    "karmabunny/kb": "../kbphp",
+                    "karmabunny/rdb": "../kbrdb"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "karmabunny\\pdb\\": "src"
@@ -216,9 +226,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Karmabunny/kbpdb/issues",
-                "source": "https://github.com/Karmabunny/kbpdb/tree/v0.14.22"
+                "source": "https://github.com/Karmabunny/kbpdb/tree/v0.19.30"
             },
-            "time": "2021-12-16T01:40:34+00:00"
+            "time": "2022-07-24T22:58:48+00:00"
         },
         {
             "name": "karmabunny/rdb",
@@ -273,16 +283,16 @@
         },
         {
             "name": "karmabunny/router",
-            "version": "v1.5.7",
+            "version": "v2.7.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Karmabunny/kbrouter.git",
-                "reference": "80949cc438b68d44fdd9ee43d63b345979378705"
+                "reference": "0f6ad30999033099d228f7cae8b2583b8d13ee8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Karmabunny/kbrouter/zipball/80949cc438b68d44fdd9ee43d63b345979378705",
-                "reference": "80949cc438b68d44fdd9ee43d63b345979378705",
+                "url": "https://api.github.com/repos/Karmabunny/kbrouter/zipball/0f6ad30999033099d228f7cae8b2583b8d13ee8d",
+                "reference": "0f6ad30999033099d228f7cae8b2583b8d13ee8d",
                 "shasum": ""
             },
             "require-dev": {
@@ -313,9 +323,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Karmabunny/kbrouter/issues",
-                "source": "https://github.com/Karmabunny/kbrouter/tree/v1.5.7"
+                "source": "https://github.com/Karmabunny/kbrouter/tree/v2.7.11"
             },
-            "time": "2021-12-20T04:00:42+00:00"
+            "time": "2022-05-25T05:56:09+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -397,29 +407,33 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.8.1",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15"
+                "reference": "dc5ff11e274a90cc1c743f66c9ad700ce50db9ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15",
-                "reference": "eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/dc5ff11e274a90cc1c743f66c9ad700ce50db9ab",
+                "reference": "dc5ff11e274a90cc1c743f66c9ad700ce50db9ab",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0 || ^8.0"
+                "php": "^7.2.5 || ^8.0"
             },
             "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.4.1",
-                "phpunit/phpunit": "^6.5.14 || ^7.5.20 || ^8.5.19 || ^9.5.8"
+                "bamarni/composer-bin-plugin": "^1.8",
+                "phpunit/phpunit": "^8.5.28 || ^9.5.21"
             },
             "type": "library",
             "extra": {
+                "bamarni-bin": {
+                    "bin-links": true,
+                    "forward-command": true
+                },
                 "branch-alias": {
-                    "dev-master": "1.8-dev"
+                    "dev-master": "1.9-dev"
                 }
             },
             "autoload": {
@@ -452,7 +466,7 @@
             ],
             "support": {
                 "issues": "https://github.com/schmittjoh/php-option/issues",
-                "source": "https://github.com/schmittjoh/php-option/tree/1.8.1"
+                "source": "https://github.com/schmittjoh/php-option/tree/1.9.0"
             },
             "funding": [
                 {
@@ -464,7 +478,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-04T23:24:31+00:00"
+            "time": "2022-07-30T15:51:26+00:00"
         },
         {
             "name": "predis/predis",
@@ -664,14 +678,14 @@
             "dist": {
                 "type": "path",
                 "url": "../sprout3",
-                "reference": "ca2d00a536b80df0dc4e0e6e2b247b8b9cca786d"
+                "reference": "15c6ddd032a00e63d64ddaa78c4e376841dab985"
             },
             "require": {
                 "davechild/textstatistics": "^1.0",
-                "karmabunny/kb": "^2.19",
-                "karmabunny/pdb": "^0.14.21",
-                "karmabunny/rdb": "^1.11",
-                "karmabunny/router": "^1.4",
+                "karmabunny/kb": "^2.29",
+                "karmabunny/pdb": ">0.19|<1.0",
+                "karmabunny/rdb": "^1.17",
+                "karmabunny/router": "^2.7",
                 "phpmailer/phpmailer": "^6.5",
                 "setasign/fpdi": "^2.3",
                 "setasign/tfpdf": "^1.32",
