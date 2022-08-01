@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c8bdfc767b4bd9cd9cf1b892e806c22f",
+    "content-hash": "da16c2a9d66d0c273a54e63855f897c8",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -678,7 +678,7 @@
             "dist": {
                 "type": "path",
                 "url": "../sprout3",
-                "reference": "15c6ddd032a00e63d64ddaa78c4e376841dab985"
+                "reference": "918a2c70e7534c2ed9b168e096137a49bb28e8f4"
             },
             "require": {
                 "davechild/textstatistics": "^1.0",

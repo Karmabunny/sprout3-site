@@ -1,6 +1,8 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "sproutcms/demo-site",
+    "name": "sproutcms/site",
+    "description": "Template Sprout 3 Application",
+    "keywords": ["sprout", "cms", "content-management-system", "framework", "mysql"],
     "config": {
         "optimize-autoloader": true,
         "sort-packages": true,
