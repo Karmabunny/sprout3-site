@@ -32,28 +32,12 @@ code {
 }
 </style>
 
+<h3>Complete!</h3>
 
-<p>The authentication details for your super-operator account have been generated.</p>
+<p>The authentication details for your super-operator account have been generated and written to <code>config/super_ops.php</code>.</p>
 
-<h3>A: First super-operator</h3>
-<ol>
-    <li>Download the <a href="<?php echo Enc::html($superop_config_url); ?>">generated config file</a></li>
-    <li>Save the file as <code><?php echo Enc::html(DOCROOT . 'config/super_ops.php'); ?></code></li>
-</ol>
+<p>Here is your current <code>super_ops</code> configuration.</p>
 
-<h3>B: Or if adding an extra super-operator</h3>
-<ol>
-    <li>Update the file <code><?php echo Enc::html(DOCROOT . 'config/super_ops.php'); ?></code> adding the following:</li>
-</ol>
-
-<?php
-echo "<pre>";
-foreach ($users as $username => $user) {
-    echo "    '", Enc::html(Enc::js($username));
-    echo "' =&gt; ['uid' => {$user['uid']}, 'hash' =&gt; '", Enc::html(Enc::js($user['hash']));
-    echo "', 'salt' =&gt; '", Enc::html(Enc::js($user['salt'])), "'],\n";
-}
-echo "</pre>";
-?>
+<pre><?php echo Enc::html($super_ops); ?></pre>
 
 <p><a href="welcome/checklist" class="button">Back to checklist</a></p>

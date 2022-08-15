@@ -54,7 +54,22 @@ $(document).ready(function() {
 <form action="welcome/db_conf_result" method="post">
     <?php
     Form::nextFieldDetails('Environment', true);
-    echo Form::multiradio('production', [], ['test' => 'Test server', 'live' => 'Live/production server']);
+    echo Form::dropdown('env', [], [
+        'dev' => 'Development',
+        'test' => 'Testing',
+        'qa' => 'Staging/QA',
+        'prod' => 'Live/production',
+    ]);
+    ?>
+
+    <?php
+    Form::nextFieldDetails('Database type', true);
+    echo Form::dropdown('type', [], [
+        'mysql' => 'MySQL Server/MariaDB',
+        'pgsql' => 'PostgreSQL',
+        'sqlite' => 'SQLite',
+        'mssql' => 'SQL Server',
+    ]);
     ?>
 
     <?php

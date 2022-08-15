@@ -39,44 +39,16 @@ li {
 </style>
 
 
-<p>Your config files have been generated. Refer to the instructions below for how to install them.</p>
+<h3>Complete!</h3>
 
+<p>Your environment file has been generated. It has been placed into your application root directory.</p>
 
-<h3>Database config</h3>
+<ul>
+    <li>Do not check this into your revisioning software.</li>
+    <li>Do not expose this file to untrusted parties.</li>
+    <li>Ensure this file has <code>0600</code> permissions.</li>
+</ul>
 
-<p>The main database config file is stored in the top-level config directory.</p>
-
-<ol>
-    <li>Download the <a href="<?php echo Enc::html($db_config_url); ?>">generated config file</a></li>
-    <li>Save the file as <code><?php echo Enc::html(DOCROOT . 'config/database.php'); ?></code></li>
-</ol>
-
-
-<?php if (!empty($pass_config)): ?>
-    <h3>Password config</h3>
-
-    <p>
-        For security reasons, the best configuration for production sites is to
-        store the password in a separate file outside the document root.
-    </p>
-
-    <ol>
-        <li>Download the <a href="<?php echo Enc::html($pass_config_url); ?>">generated config file</a></li>
-        <li>Save the file as <code><?php echo Enc::html($pass_filename); ?></code></li>
-    </ol>
-<?php endif; ?>
-
-<?php if (!empty($host_config)): ?>
-    <h3>Server config</h3>
-
-    <p>
-        For security reasons, the list of development machines is stored in a config file.
-    </p>
-
-    <ol>
-        <li>Download the <a href="<?php echo Enc::html($host_config_url); ?>">generated config file</a></li>
-        <li>Save the file as <code><?php echo Enc::html(DOCROOT . 'config/dev_hosts.php'); ?></code></li>
-    </ol>
-<?php endif; ?>
+<p>Your document root <em>must</em> be the <code>web/</code> directory. This is critical for the security and stability of your site.</p>
 
 <p><br><a href="welcome/checklist" class="button">Back to checklist</a></p>

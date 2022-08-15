@@ -14,12 +14,12 @@
 namespace SproutModules\Karmabunny\Welcome\Controllers;
 
 use Exception;
-use PDOException;
+use karmabunny\pdb\Exceptions\PdbException;
 
 use Kohana;
 
 use Sprout\Controllers\Controller;
-use karmabunny\pdb\Exceptions\QueryException;
+use karmabunny\pdb\Pdb as PdbConnection;
 use Sprout\Helpers\AdminAuth;
 use Sprout\Helpers\Auth;
 use Sprout\Helpers\Constants;
@@ -137,14 +137,14 @@ class WelcomeController extends Controller
      */
     private function testDbconf()
     {
-        if (!file_exists(DOCROOT . 'config/database.php')) {
+        if (!file_exists(BASE_PATH . '.env')) {
             return [false];
         }
 
         try {
             Pdb::getConnection();
             return [true];
-        } catch (PDOException $ex) {
+        } catch (PdbException $ex) {
             return [false, $ex->getMessage()];
         } catch (Exception $ex) {
             return [false, $ex->getMessage()];
@@ -184,9 +184,7 @@ class WelcomeController extends Controller
             $q = "SELECT * FROM ~pages LIMIT 1";
             Pdb::query($q, [], 'null');
             return [true];
-        } catch (PDOException $ex) {
-            return [false, 'Unable to connect to database'];
-        } catch (QueryException $ex) {
+        } catch (PdbException $ex) {
             return [false, $ex->getMessage()];
         } catch (Exception $ex) {
             return [false, $ex->getMessage()];
@@ -205,9 +203,7 @@ class WelcomeController extends Controller
             $q = "SELECT COUNT(*) FROM ~pages LIMIT 1";
             $num_pages = Pdb::query($q, [], 'val');
             return [$num_pages > 0];
-        } catch (PDOException $ex) {
-            return [false, 'Unable to connect to database'];
-        } catch (QueryException $ex) {
+        } catch (PdbException $ex) {
             return [false, $ex->getMessage()];
         } catch (Exception $ex) {
             return [false, $ex->getMessage()];
@@ -238,6 +234,8 @@ class WelcomeController extends Controller
         $data = Form::loadFromSession('db_conf');
         if (empty($data)) {
             Form::setData([
+                'env' => 'dev',
+                'type' => 'mysql',
                 'host' => 'localhost',
             ]);
         }
@@ -263,13 +261,16 @@ class WelcomeController extends Controller
         if (empty($_POST['database'])) Json::out(['result' => 'You must specify a database']);
 
         try {
-            new \PDO(
-                "mysql:host={$_POST['host']};dbname={$_POST['database']}",
-                $_POST['user'],
-                $_POST['pass']
-            );
+            PdbConnection::connect([
+                'env' => $_POST['env'] ?? 'development',
+                'type' => $_POST['type'] ?? 'mysql',
+                'host' => $_POST['host'],
+                'user' => $_POST['user'],
+                'pass' => $_POST['pass'],
+                'database' => $_POST['database'],
+            ]);
             Json::out(['result' => 'Connection successful']);
-        } catch (PDOException $ex) {
+        } catch (PdbException $ex) {
             Json::out(['result' => $ex->getMessage()]);
         }
     }
@@ -283,7 +284,7 @@ class WelcomeController extends Controller
         $_SESSION['db_conf']['field_values'] = Validator::trim($_POST);
 
         $valid = new Validator($_POST);
-        $valid->required(['production', 'host', 'user', 'pass', 'database']);
+        $valid->required(['env', 'type', 'host', 'user', 'pass', 'database']);
 
         if ($valid->hasErrors()) {
             $_SESSION['db_conf']['field_errors'] = $valid->getFieldErrors();
@@ -294,22 +295,15 @@ class WelcomeController extends Controller
 
         $_SESSION['database_config'] = $_POST;
 
-        $view = new PhpView('modules/Welcome/db_conf_result');
-        $view->db_config_url = 'welcome/db_conf_database';
-
-        if ($_POST['production'] == 'live') {
-            $view->pass_config_url = 'welcome/db_conf_password';
-            $view->pass_config = self::genPassConfig($_POST);
-
-            $parts = explode(DIRECTORY_SEPARATOR, rtrim(DOCROOT, DIRECTORY_SEPARATOR));
-            array_pop($parts);
-            $view->pass_filename = implode(DIRECTORY_SEPARATOR, $parts) . DIRECTORY_SEPARATOR . 'database.config.php';
-        } else {
-            $view->host_config_url = 'welcome/db_conf_hosts';
-            $view->host_config = self::genDevHostsConfig();
-
-            $view->dev_hostname = php_uname('n');
+        if (file_exists(BASE_PATH . '.env')) {
+            Notification::error('dotenv file already exists.');
+            Url::redirect('welcome/db_conf_form');
         }
+
+        $config = self::genEnvFile($_SESSION['database_config']);
+        file_put_contents(BASE_PATH . '.env', $config);
+
+        $view = new PhpView('modules/Welcome/db_conf_result');
 
         $skin = new PhpView('sprout/admin/login_layout');
         $skin->browser_title = 'Database sync';
@@ -320,113 +314,27 @@ class WelcomeController extends Controller
 
 
     /**
-     * Generate and download a database config file
-     */
-    public static function dbConfDatabase()
-    {
-        $config = self::genDbConfig($_SESSION['database_config']);
-
-        header('Content-type: application/php');
-        header('Content-disposition: attachment; filename="database.php"');
-        echo $config;
-        exit(0);
-    }
-
-
-    /**
-     * Generate and download a dev hosts config file
-     */
-    public static function dbConfHosts()
-    {
-        $config = self::genDevHostsConfig();
-
-        header('Content-type: application/php');
-        header('Content-disposition: attachment; filename="dev_hosts.php"');
-        echo $config;
-        exit(0);
-    }
-
-
-    /**
      * Generate a database config from given parameters
      *
-     * @param array $data Config params; 'production', 'host', 'user', 'pass', 'database'
+     * @param array $data Config params; 'env', 'type', 'host', 'user', 'pass', 'database'
      * @return string
      */
-    private static function genDbConfig(array $data)
+    private static function genEnvFile(array $data)
     {
-        $db_config = file_get_contents(__DIR__ . '/../config_tmpl/database.php');
+        $key = Security::randStr(16);
 
-        if ($data['production'] == 'live') {
-            $db_config = str_replace('{{PROD-HOST}}', $data['host'], $db_config);
-            $db_config = str_replace('{{PROD-USER}}', $data['user'], $db_config);
-            $db_config = str_replace('{{PROD-DATABASE}}', $data['database'], $db_config);
-            $db_config = str_replace('{{TEST-USER}}', '-- username --', $db_config);
-            $db_config = str_replace('{{TEST-PASS}}', '-- password --', $db_config);
-            $db_config = str_replace('{{TEST-DATABASE}}', '-- database --', $db_config);
-            $db_config = str_replace('{{TEST-HOST}}', 'localhost', $db_config);
-        } else {
-            $db_config = str_replace('{{TEST-HOST}}', $data['host'], $db_config);
-            $db_config = str_replace('{{TEST-USER}}', $data['user'], $db_config);
-            $db_config = str_replace('{{TEST-PASS}}', $data['pass'], $db_config);
-            $db_config = str_replace('{{TEST-DATABASE}}', $data['database'], $db_config);
-            $db_config = str_replace('{{PROD-USER}}', '-- username --', $db_config);
-            $db_config = str_replace('{{PROD-DATABASE}}', '-- database --', $db_config);
-            $db_config = str_replace('{{PROD-HOST}}', 'localhost', $db_config);
-        }
-
-        $db_config = str_replace('{{SERVER-KEY}}', Security::randStr(16), $db_config);
-
-        return $db_config;
-    }
-
-
-    /**
-     * Generate a dev hosts config.
-     *
-     * @return string
-     */
-    private static function genDevHostsConfig()
-    {
-        $hostname = addslashes(php_uname('n'));
-
-        return "<?php
-if (in_array(php_uname('n'), [
-    'localhost',
-    '{$hostname}',
-])) {
-    define('IN_PRODUCTION', false);
-    return;
-}
-";
-    }
-
-
-    /**
-     * Generate and download a password config file
-     */
-    public static function dbConfPassword()
-    {
-        $config = self::genPassConfig($_SESSION['database_config']);
-
-        header('Content-type: application/php');
-        header('Content-disposition: attachment; filename="database.config.php"');
-        echo $config;
-        exit(0);
-    }
-
-
-    /**
-     * Generate a database password file from given parameters
-     *
-     * @param array $data Config params; 'pass'
-     * @return string
-     */
-    private static function genPassConfig(array $data)
-    {
-        $pass_config = file_get_contents(__DIR__ . '/../config_tmpl/prod_password.php');
-        $pass_config = str_replace('{{PROD-PASS}}', $data['pass'], $pass_config);
-        return $pass_config;
+        $envfile = <<<EOF
+SITES_ENVIRONMENT={$data['env']}
+SITES_DB_TYPE={$data['type']}
+SITES_DB_HOSTNAME={$data['host']}
+SITES_DB_USERNAME={$data['user']}
+SITES_DB_PASSWORD={$data['pass']}
+SITES_DB_DATABASE={$data['database']}
+SITES_DB_TBLPRFIX=_sprout
+SECURITY_KEY={$key}
+EOF;
+        $envfile .= "\n";
+        return $envfile;
     }
 
 
@@ -486,11 +394,12 @@ if (in_array(php_uname('n'), [
     /**
      * Generate and download super operator config file
      *
-     * @return void Echos directly
+     * @param array $params [ user, hash, salt ]
+     * @return string
      */
-    public function superOperatorConf()
+    private static function superOperatorConf(array $params)
     {
-        $users = AdminAuth::injectLocalSuperConf($_SESSION['supeop_config']['user'], $_SESSION['supeop_config']['hash'], $_SESSION['supeop_config']['salt']);
+        $users = AdminAuth::injectLocalSuperConf($params['user'], $params['hash'], $params['salt']);
         $config = '';
 
         $config .= "<?php\n\$config['operators'] = [\n";
@@ -498,13 +407,11 @@ if (in_array(php_uname('n'), [
             $config .= "    '" . Enc::html(Enc::js($username));
             $config .= "' => ['uid' => {$user['uid']}, " .  "'hash' => '" .  Enc::html(Enc::js($user['hash']));
             $config .= "', 'salt' => '" . Enc::html(Enc::js($user['salt'])) . "'],\n";
-            $config .= "];\n";
         }
 
-        header('Content-type: application/php');
-        header('Content-disposition: attachment; filename="super_ops.php"');
-        echo $config;
-        exit(0);
+        $config .= "];\n";
+
+        return $config;
     }
 
 
@@ -559,7 +466,12 @@ if (in_array(php_uname('n'), [
         $valid->check('password2', 'Validity::length', 8, 60);
         $valid->multipleCheck(['password1', 'password2'], 'Validity::allMatch');
 
-        if (!empty($_POST['password1']) and $_POST['password1'] === $_POST['password2']) {
+        // Skip complexity check for dev because I love being lazy.
+        if (
+            SITES_ENVIRONMENT !== 'dev'
+            and !empty($_POST['password1'])
+            and $_POST['password1'] === $_POST['password2']
+        ) {
             $complexity = self::passwordComplexity($_POST['password1']);
             if ($complexity !== true) {
                 $valid->addFieldError('password1', 'Not complex enough');
@@ -586,7 +498,13 @@ if (in_array(php_uname('n'), [
             'hash' => $hashed[0],
             'salt' => $hashed[2],
         ];
-        Url::redirect('welcome/super_op_result?' . http_build_query($params));
+
+        $_SESSION['superop_config'] = $params;
+
+        $config = self::superOperatorConf($params);
+        file_put_contents(DOCROOT . 'config/super_ops.php', $config);
+
+        Url::redirect('welcome/super_op_result');
     }
 
 
@@ -595,13 +513,8 @@ if (in_array(php_uname('n'), [
      */
     public function superOperatorResult()
     {
-        $users = AdminAuth::injectLocalSuperConf($_GET['user'], $_GET['hash'], $_GET['salt']);
-
-        $_SESSION['supeop_config'] = $_GET;
-
         $view = new PhpView('modules/Welcome/super_op_result');
-        $view->superop_config_url = 'welcome/super_op_conf';
-        $view->users = $users;
+        $view->super_ops = file_get_contents(DOCROOT . 'config/super_ops.php');
 
         $skin = new PhpView('sprout/admin/login_layout');
         $skin->browser_title = 'Super operator';

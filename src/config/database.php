@@ -21,7 +21,7 @@
 // Test server config
 $config['default'] = [
     'connection' => [
-        'type' => 'mysql',
+        'type' => getenv('SITES_DB_TYPE') ?: 'mysql',
         'user' => getenv('SITES_DB_USERNAME') ?: 'sprout3',
         'pass' => getenv('SITES_DB_PASSWORD') ?: 'password',
         'database' => getenv('SITES_DB_DATABASE') ?: 'sprout3',

@@ -59,11 +59,11 @@ code {
 
 
 <div class="test" data-test="dbconf" data-result="<?php echo (int)$results['dbconf'][0]; ?>">
-    <h3>1. Create database config</h3>
+    <h3>1. Create an environment file</h3>
 
     <p>
-        Use our <a href="welcome/db_conf_form">database config generator</a> to create
-        a <code>database.php</code> file and then save that in the <code>config/</code> directory.
+        Use our <a href="welcome/db_conf_form">environment config generator</a> to create
+        a <code>.env</code> (dot-env) file. This lives in your application root directory.
     </p>
 
     <?php if (!empty($results['dbconf'][1])): ?>
