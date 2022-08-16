@@ -32,13 +32,7 @@
         ],
         "patch-locals": "@php tools/patch_locals.php"
     },
-    "repositories": {
-        "sprout3": {
-            "type": "path",
-            "url": "../sprout3"
-        }
-    },
     "require": {
-        "sproutcms/cms": "3.2.x-dev"
+        "sproutcms/cms": "^3.2"
     }
 }

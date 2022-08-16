@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da16c2a9d66d0c273a54e63855f897c8",
+    "content-hash": "fbb81503996d72770d343291ad07a27e",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -674,11 +674,17 @@
         },
         {
             "name": "sproutcms/cms",
-            "version": "3.2.x-dev",
+            "version": "v3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Karmabunny/sprout3.git",
+                "reference": "4d56609195a607eaf0c312789d796af08115d3c1"
+            },
             "dist": {
-                "type": "path",
-                "url": "../sprout3",
-                "reference": "918a2c70e7534c2ed9b168e096137a49bb28e8f4"
+                "type": "zip",
+                "url": "https://api.github.com/repos/Karmabunny/sprout3/zipball/4d56609195a607eaf0c312789d796af08115d3c1",
+                "reference": "4d56609195a607eaf0c312789d796af08115d3c1",
+                "shasum": ""
             },
             "require": {
                 "davechild/textstatistics": "^1.0",
@@ -708,42 +714,19 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Sprout\\": "src/sprout"
-                },
                 "files": [
                     "src/sprout/preboot.php"
-                ]
+                ],
+                "psr-4": {
+                    "Sprout\\": "src/sprout"
+                }
             },
-            "scripts": {
-                "register-phpcs": [
-                    "phpcs --config-set installed_paths src/vendor/phpcompatibility/php-compatibility"
-                ],
-                "post-install-cmd": [
-                    "@register-phpcs"
-                ],
-                "post-update-cmd": [
-                    "@register-phpcs"
-                ],
-                "compat": [
-                    "phpcs -p --standard=phpcs.xml --colors --extensions=php"
-                ],
-                "analyse": [
-                    "phpstan analyse -c phpstan.neon"
-                ],
-                "test": [
-                    "phpunit --testdox --configuration phpunit.xml.dist"
-                ],
-                "nstrack": [
-                    "nstrack"
-                ],
-                "patch-locals": [
-                    "@php tools/patch_locals.php"
-                ]
+            "notification-url": "https://packagist.org/downloads/",
+            "support": {
+                "issues": "https://github.com/Karmabunny/sprout3/issues",
+                "source": "https://github.com/Karmabunny/sprout3/tree/v3.2.0"
             },
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2022-08-16T08:39:35+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1146,9 +1129,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "sproutcms/cms": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
@@ -1156,5 +1137,5 @@
     "platform-overrides": {
         "php": "7.3"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }
