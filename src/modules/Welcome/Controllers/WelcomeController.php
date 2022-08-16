@@ -302,6 +302,7 @@ class WelcomeController extends Controller
 
         $config = self::genEnvFile($_SESSION['database_config']);
         file_put_contents(BASE_PATH . '.env', $config);
+        @chmod(BASE_PATH . '.env', 0600);
 
         $view = new PhpView('modules/Welcome/db_conf_result');
 
