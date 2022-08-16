@@ -35,6 +35,5 @@ $config['default'] = [
     ],
 ];
 
-// This key is not secure, so it must not be used in production environments
-$config['server_key'] = 'NOT SECURE';
+$config['server_key'] = getenv('SECURITY_KEY') ?: 'NOT SECURE';
 
