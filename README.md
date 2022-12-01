@@ -10,7 +10,7 @@ It is built by developers, for developers.
 Requirements
 ------------
 
-* PHP 7.3 or later
+* PHP 7.4 or later
 
 * A web server, e.g. Apache or nginx
 
