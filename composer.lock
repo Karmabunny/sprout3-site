@@ -775,16 +775,16 @@
         },
         {
             "name": "sproutcms/cms",
-            "version": "v3.2.7",
+            "version": "v3.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Karmabunny/sprout3.git",
-                "reference": "a12029b94c36412164f550be9173af8f20b6fcc2"
+                "reference": "67d014ca3eccf7b15986bb1bb3092c2423c57f69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Karmabunny/sprout3/zipball/a12029b94c36412164f550be9173af8f20b6fcc2",
-                "reference": "a12029b94c36412164f550be9173af8f20b6fcc2",
+                "url": "https://api.github.com/repos/Karmabunny/sprout3/zipball/67d014ca3eccf7b15986bb1bb3092c2423c57f69",
+                "reference": "67d014ca3eccf7b15986bb1bb3092c2423c57f69",
                 "shasum": ""
             },
             "require": {
@@ -816,7 +816,7 @@
                 "karmabunny/nstrack": "^1.0",
                 "phpcompatibility/php-compatibility": "^9.3",
                 "phpstan/phpstan": "^1.5",
-                "phpunit/phpunit": "^8"
+                "phpunit/phpunit": "^7"
             },
             "type": "library",
             "extra": {
@@ -849,9 +849,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Karmabunny/sprout3/issues",
-                "source": "https://github.com/Karmabunny/sprout3/tree/v3.2.7"
+                "source": "https://github.com/Karmabunny/sprout3/tree/v3.2.8"
             },
-            "time": "2022-12-01T05:05:04+00:00"
+            "time": "2022-12-06T07:29:29+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
