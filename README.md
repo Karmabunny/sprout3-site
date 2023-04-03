@@ -31,7 +31,7 @@ Getting started
 
 A sample docker configuration is also provided.
 
-This a basic Nginx + MariaDB + PHP-FPM installation.
+This is a basic Nginx + MariaDB + PHP-FPM installation.
 
 ```sh
 composer create-project sproutcms/site
