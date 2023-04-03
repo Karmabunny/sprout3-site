@@ -27,4 +27,23 @@ Getting started
 3. Browse to http://localhost:8080/
 
 
-For more, visit the docs for `sproutcms/cms`.
+### Docker
+
+A sample docker configuration is also provided.
+
+This a basic Nginx + MariaDB + PHP-FPM installation.
+
+```sh
+composer create-project sproutcms/site
+composer install
+./start.sh up
+```
+
+> Browse to http://localhost:8080/
+
+
+Documentation
+-------------
+
+For more, visit [`sproutcms/cms`](https://github.com/Karmabunny/sprout3).
+
