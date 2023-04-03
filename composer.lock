@@ -868,16 +868,16 @@
         },
         {
             "name": "sproutcms/cms",
-            "version": "v3.2.17",
+            "version": "v3.2.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Karmabunny/sprout3.git",
-                "reference": "909388c0bf251e70893d45eeb46ed970cfe4a99c"
+                "reference": "bdd9f6c14ec558b7a6adae7c3d5beafab681c132"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Karmabunny/sprout3/zipball/909388c0bf251e70893d45eeb46ed970cfe4a99c",
-                "reference": "909388c0bf251e70893d45eeb46ed970cfe4a99c",
+                "url": "https://api.github.com/repos/Karmabunny/sprout3/zipball/bdd9f6c14ec558b7a6adae7c3d5beafab681c132",
+                "reference": "bdd9f6c14ec558b7a6adae7c3d5beafab681c132",
                 "shasum": ""
             },
             "require": {
@@ -944,9 +944,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Karmabunny/sprout3/issues",
-                "source": "https://github.com/Karmabunny/sprout3/tree/v3.2.17"
+                "source": "https://github.com/Karmabunny/sprout3/tree/v3.2.18"
             },
-            "time": "2023-03-30T23:20:37+00:00"
+            "time": "2023-04-03T05:27:30+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
