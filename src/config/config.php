@@ -30,19 +30,11 @@ if (IN_PRODUCTION) {
     $config['cli_domain'] = 'devel.example.com';
 }
 
-
 /**
-* Remove these three lines once SproutCMS has been set up
-**/
-Sprout\Helpers\Register::modules([
-    'Welcome',
-]);
-
-
-/**
- * Enabled sprout v3 modules
+ * Initial sprout modules
  */
 Sprout\Helpers\Register::modules([
-    'HomePage',
-    'Demo',
+    SproutModules\Sample\Welcome\WelcomeModule::class,
+    SproutModules\Sample\HomePage\HomePageModule::class,
+    SproutModules\Sample\Demo\DemoModule::class,
 ]);
