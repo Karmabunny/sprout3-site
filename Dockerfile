@@ -25,6 +25,7 @@ RUN set -xe \
     php81-pdo_mysql \
     php81-phar \
     php81-session \
+    php81-simplexml \
     php81-tokenizer \
     php81-xml \
     php81-zip
