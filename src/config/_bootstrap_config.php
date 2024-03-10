@@ -8,6 +8,14 @@ class BootstrapConfig
 {
 
     /**
+     * The PHP error reporting level.
+     */
+    const ERROR_REPORTING = IN_PRODUCTION
+        ? E_ALL ^ E_NOTICE
+        : E_ALL;
+
+
+    /**
      * The PHP timezone will be set to this value using date_default_timezone_set
      *
      * If set to an empty value then the timzone will not be set, which may cause
@@ -21,6 +29,14 @@ class BootstrapConfig
      * which would occur, but doesn't actually perform the redirect
      */
     const ORIGIN_CLEANUP_DEBUG = false;
+
+
+    /**
+     * Whether to process fatal errors with the shutdown handler.
+     *
+     * Else uses native display_errors.
+     */
+    const ENABLE_FATAL_ERRORS = true;
 
 
     /**
