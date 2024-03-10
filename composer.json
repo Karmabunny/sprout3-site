@@ -37,7 +37,7 @@
         "test": "phpunit --testdox --configuration phpunit.xml.dist"
     },
     "require": {
-        "sproutcms/cms": "^3.4"
+        "sproutcms/cms": "dev-feat/v4"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5"
