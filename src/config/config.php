@@ -7,6 +7,8 @@
  */
 
 use Sprout\Welcome\WelcomeModule;
+use SproutModules\Karmabunny\Demo\DemoModule;
+use SproutModules\Karmabunny\HomePage\HomePageModule;
 
 /**
  * Base path of the web site.
@@ -44,6 +46,6 @@ Sprout\Helpers\Register::modules([
  * Enabled sprout v3 modules
  */
 Sprout\Helpers\Register::modules([
-    'HomePage',
-    'Demo',
+    HomePageModule::class,
+    DemoModule::class,
 ]);
