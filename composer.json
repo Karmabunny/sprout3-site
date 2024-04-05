@@ -25,6 +25,7 @@
             "karmabunny/pdb": "../kbpdb",
             "karmabunny/rdb": "../kbrdb",
             "karmabunny/nstrack": "../nstrack",
+            "sproutcms/module": "../sprout-module",
             "sproutcms/cms": "../sprout3"
         }
     },
@@ -37,7 +38,8 @@
         "test": "phpunit --testdox --configuration phpunit.xml.dist"
     },
     "require": {
-        "sproutcms/cms": "dev-feat/v4"
+        "sproutcms/cms": "dev-feat/v4",
+        "sproutcms/module": "^4.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5"

@@ -7,7 +7,7 @@
  */
 
 use Sprout\Welcome\WelcomeModule;
-use SproutModules\Karmabunny\Demo\DemoModule;
+use SproutModules\Demo\DemoModule;
 use SproutModules\Karmabunny\HomePage\HomePageModule;
 
 /**

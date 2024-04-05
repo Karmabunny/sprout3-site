@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0b903ea865550f16700dfce6ddc4f247",
+    "content-hash": "a542c916bdf0097c0488a3e6c707bf52",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1521,6 +1521,47 @@
                 "source": "https://github.com/Karmabunny/sprout3/tree/feat/v4"
             },
             "time": "2024-03-10T06:34:43+00:00"
+        },
+        {
+            "name": "sproutcms/module",
+            "version": "v4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Karmabunny/sprout-module.git",
+                "reference": "d3f326396d73c46a2a91df593d2575cfe588998f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Karmabunny/sprout-module/zipball/d3f326396d73c46a2a91df593d2575cfe588998f",
+                "reference": "d3f326396d73c46a2a91df593d2575cfe588998f",
+                "shasum": ""
+            },
+            "require": {
+                "sproutcms/cms": "dev-feat/v4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SproutModules\\Demo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Template Sprout 4 Module",
+            "keywords": [
+                "cms",
+                "content-management-system",
+                "framework",
+                "mysql",
+                "sprout"
+            ],
+            "support": {
+                "issues": "https://github.com/Karmabunny/sprout-module/issues",
+                "source": "https://github.com/Karmabunny/sprout-module/tree/v4.0.0"
+            },
+            "time": "2024-04-05T06:31:10+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
