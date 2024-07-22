@@ -1265,16 +1265,16 @@
         },
         {
             "name": "sproutcms/cms",
-            "version": "v4.0.0",
+            "version": "v4.2.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Karmabunny/sprout3.git",
-                "reference": "25c3279896a723876bc622623681cca5ccb74bd2"
+                "reference": "deb7d73ce6b8bb29a48a5e882c05e8e2a493d032"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Karmabunny/sprout3/zipball/25c3279896a723876bc622623681cca5ccb74bd2",
-                "reference": "25c3279896a723876bc622623681cca5ccb74bd2",
+                "url": "https://api.github.com/repos/Karmabunny/sprout3/zipball/deb7d73ce6b8bb29a48a5e882c05e8e2a493d032",
+                "reference": "deb7d73ce6b8bb29a48a5e882c05e8e2a493d032",
                 "shasum": ""
             },
             "require": {
@@ -1341,9 +1341,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Karmabunny/sprout3/issues",
-                "source": "https://github.com/Karmabunny/sprout3/tree/v4.0.0"
+                "source": "https://github.com/Karmabunny/sprout3/tree/v4.2.15"
             },
-            "time": "2024-04-05T06:52:33+00:00"
+            "time": "2024-07-03T06:53:20+00:00"
         },
         {
             "name": "sproutcms/module",
