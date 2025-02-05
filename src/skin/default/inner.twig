@@ -61,7 +61,7 @@
 
                             <h1>{{ page_title }}</h1>
 
-                            {% include "skin/layouts/01_core/_breadcrumb" %}
+                            {% include "skin/layouts/01_core/_breadcrumb" with {'post_crumbs': post_crumbs ?? []} %}
 
                             {{ sprout.notification.checkMessages()|raw }}
 

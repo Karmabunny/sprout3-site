@@ -2,7 +2,7 @@
 {% apply spaceless %}
 {% if sprout.navigation.matchedNode() %}
     <ul class="breadcrumb">
-    {% for url, label in sprout.navigation.getCrumbs() %}
+    {% for url, label in sprout.navigation.getCrumbs()|merge(post_crumbs) %}
         <li>
         {% if not loop.last %}
             <a href="{{ url }}">{{ label }}</a>
