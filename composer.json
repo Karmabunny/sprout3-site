@@ -41,7 +41,8 @@
     },
     "require": {
         "sproutcms/cms": "^4.3",
-        "sproutcms/module": "^4.0"
+        "sproutcms/module": "^4.0",
+        "vlucas/phpdotenv": "^5"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5"
