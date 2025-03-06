@@ -36,6 +36,8 @@
 *  ttl             TTL for caches (in seconds, default: 10)
 **/
 
+use karmabunny\pdb\PdbConfig;
+
 // Test server config
 $config['default'] = [
     'connection' => [
@@ -48,6 +50,11 @@ $config['default'] = [
     ],
     'prefix' => 'sprout_',
     'character_set' => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'transaction_mode' => 0
+       | PdbConfig::TX_STRICT_COMMIT
+       | PdbConfig::TX_STRICT_ROLLBACK
+       | PdbConfig::TX_ENABLE_NESTED,
     'session' => [
         'sql_mode' => 'NO_ENGINE_SUBSTITUTION',
     ],
