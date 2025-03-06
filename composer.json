@@ -1,6 +1,7 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
     "name": "sproutcms/site",
+    "type": "project",
     "description": "Template Sprout 4 Application",
     "license": "GPL-2.0-or-later",
     "keywords": ["sprout", "cms", "content-management-system", "framework", "mysql"],
@@ -39,7 +40,7 @@
         "test": "phpunit --testdox --configuration phpunit.xml.dist"
     },
     "require": {
-        "sproutcms/cms": "^4",
+        "sproutcms/cms": "^4.3",
         "sproutcms/module": "^4.0"
     },
     "require-dev": {
