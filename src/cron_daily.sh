@@ -57,7 +57,7 @@ export CRON=1
 # In this case you'd probably also want to remove the temp files cleanup command as well.
 #
 
-$PHP -d "safe_mode=0" index.php "cron_job/run/daily"
+$PHP -d "safe_mode=0" web/index.php "cron_job/run/daily"
 
 
 # Clean up any temp files older than 1 day
