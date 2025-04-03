@@ -39,7 +39,7 @@ echo
 
 
 # Drop into the directory
-cd `dirname $0`
+cd "$(dirname "$0")/.."
 
 # Let the scripts know it's a cron
 export CRON=1
