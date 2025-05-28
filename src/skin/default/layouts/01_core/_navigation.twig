@@ -1,5 +1,5 @@
 
-{% set nav = sprout.navigation.getRootNode() %}
+{% set nav = sprout.navigation.getMenuItems() %}
 
 {% set max_depth = sprout.config('sprout.pmm2_depth') ?? 999 %}
 {% set nav_limit = sprout.config('sprout.nav_limit') ?? 2 %}
