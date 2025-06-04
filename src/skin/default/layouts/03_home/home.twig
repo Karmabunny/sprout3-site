@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
@@ -9,6 +8,11 @@
 
     <script type="text/javascript">var ROOT = 'SITE/';</script>
 
+    {{ jquery('jquery', 'front') }}
+    <needs />
+
+    {% include "skin/layouts/01_core/_meta-social" %}
+
     {{ sprout.skin.common() }}
     {{ sprout.skin.css('normalize', 'flexboxgrid', 'global', 'frankenmenu') }}
     {{ sprout.skin.js('frankenmenu', 'skin') }}
@@ -16,15 +20,18 @@
     {% include 'skin/layouts/01_core/_google_analytics' %}
     <needs />
 </head>
-<body>
+<body class="{{ controller_name ?? '' }}">
     <!--[if IE]><div class="old-browser"><p>This website uses modern construction techniques, which may not render correctly in your old browser. <br>We recommend updating your browser for the best online experience.</p> <p>Visit <a href="http://browsehappy.com/">browsehappy.com</a> to help you select an upgrade.</p></div><![endif]-->
 
-    <a class="-vis-hidden" href="#content">Skip to Content</a>
-
-    {% include "skin/layouts/01_core/_header" %}
-
+    {% include 'skin/layouts/01_core/_mobile-header' %}
 
     <div id="wrap">
+        <a class="-vis-hidden" href="#content">Skip to Content</a>
+
+        {% include "skin/layouts/01_core/_header" %}
+
+        {% include 'skin/layouts/03_home/_hero-banner' %}
+
         <div id="content" class="section section--content bg-white">
             <div class="container">
                 <ul>
@@ -37,9 +44,9 @@
             </div>
         </div>
 
-    </div>
+         {% include 'skin/layouts/01_core/_footer' %}
 
-    {% include 'skin/layouts/01_core/_footer' %}
+    </div>
 
 </body>
 </html>
