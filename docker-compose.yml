@@ -5,7 +5,8 @@ services:
     user: ${USER_UID}
     volumes:
       - .:/srv:rw
-      - ./docker/env:/srv/.env:rw
+    env_file:
+      - ./docker/env
 
   mysql:
     image: mariadb:10.6

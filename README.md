@@ -10,7 +10,7 @@ It is built by developers, for developers.
 Requirements
 ------------
 
-* PHP 8.1 or later
+* PHP 8.2 or later
 
 * A web server, e.g. Apache or nginx
 
@@ -37,6 +37,15 @@ This is a basic Nginx + MariaDB + PHP-FPM installation.
 composer create-project sproutcms/site
 composer install
 ./start.sh up
+```
+
+or
+
+```sh
+composer create-project sproutcms/site
+composer install
+docker compose build --no-cache
+docker compose up -d
 ```
 
 > Browse to http://localhost:8080/
