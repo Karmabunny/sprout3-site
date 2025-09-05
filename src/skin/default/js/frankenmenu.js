@@ -58,7 +58,7 @@
 
                 $("<button class='submenu-toggle'><span class='submenu-toggle-label -vis-hidden'>Toggle submenu</span></button>").appendTo($('#frankenmenu-list .menu-item').has('.sub-menu, .mega-menu'));
 
-                $('.submenu-toggle').click(function() {
+                $('.submenu-toggle').on('click', function() {
                     var $this = $(this);
                     var $menuItem = $this.closest(".menu-item");
                     if(!$menuItem.hasClass('menu-item-submenu-open')) {
@@ -169,7 +169,7 @@
         }
 
         // Mobile menu button
-        $("#mobile-menu-button").click(function(){
+        $("#mobile-menu-button").on('click', function(){
             toggleMobileMenu();
         });
 

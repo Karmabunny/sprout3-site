@@ -55,7 +55,7 @@ function cart_view() {
             var $tr = $(this);
 
             // Qty textbox
-            $tr.find('input.textbox-qty').change(function() {
+            $tr.find('input.textbox-qty').on('change', function() {
                 var price = $tr.find('td.price').html();
                 price = price.replace(/[^\.0-9]/g, '');
                 price = parseInt(price, 10);
@@ -78,7 +78,7 @@ function cart_view() {
             });
 
             var timeout = 0;
-            $tr.find('input.textbox-qty').keypress(function() {
+            $tr.find('input.textbox-qty').on('keypress', function() {
                 var $input = $(this);
                 window.clearTimeout(timeout);
                 timeout = window.setTimeout(function() {
@@ -87,7 +87,7 @@ function cart_view() {
             });
 
             // Remove button
-            $tr.find('a.btn-remove').click(function() {
+            $tr.find('a.btn-remove').on('click', function() {
                 $tr.animate({'opacity' : 0.2}, 1000);
                 $tr.find('input.textbox-qty').val('0');
                 $tr.find('td.total').html('$0.00');

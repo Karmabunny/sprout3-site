@@ -21,7 +21,7 @@ $(document).ready(function() {
     // Select placeholder effect
     $("option.dropdown-top:selected").closest(".field-element").addClass("field-element--dropdown--placeholder");
 
-    $("option.dropdown-top").closest("select").change(function(){
+    $("option.dropdown-top").closest("select").on('change', function(){
         var placeholderSelected = $("option:selected", this).hasClass("dropdown-top");
         if(!placeholderSelected) {
             $(this).closest(".field-element").removeClass("field-element--dropdown--placeholder");
