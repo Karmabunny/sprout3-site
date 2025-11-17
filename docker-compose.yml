@@ -10,7 +10,7 @@ services:
       - ./docker/env:/srv/.env:rw
 
   mysql:
-    image: mariadb:10.6
+    image: mariadb:10.11
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: sprout3
