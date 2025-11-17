@@ -14,7 +14,11 @@ else
     CMD="help"
 fi
 
-COMPOSE="docker-compose --project-name $PROJECT"
+if which docker-compose; then
+    COMPOSE="docker-compose --project-name $PROJECT"
+else
+    COMPOSE="docker compose --project-name $PROJECT"
+fi
 
 case "$CMD" in
     "up")
