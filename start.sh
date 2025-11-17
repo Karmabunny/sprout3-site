@@ -31,7 +31,7 @@ case "$CMD" in
     ;;
 
     "sprout")
-        $COMPOSE exec app ./web/index.php $@
+        $COMPOSE exec app php ./web/index.php $@
         exit $?
     ;;
 
