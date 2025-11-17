@@ -3,7 +3,8 @@ set -e
 
 cd "$(dirname $0)"
 
-export USER_UID="$(id -u):$(id -g)"
+export FPM_USER="$(id -u)"
+export FPM_GROUP="$(id -g)"
 export PROJECT=sprout
 
 if [[ $1 ]]; then

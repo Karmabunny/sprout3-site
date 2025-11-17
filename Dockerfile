@@ -1,42 +1,42 @@
-FROM alpine:3.17 AS base
+FROM debian:trixie-slim AS base
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 RUN set -xe \
-    && apk add --update --no-cache \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
     ca-certificates \
+    gettext-base \
+    mariadb-client \
     curl \
-    php81 \
-    php81-cli \
-    php81-bcmath \
-    php81-common \
-    php81-curl \
-    php81-dom \
-    php81-exif \
-    php81-fileinfo \
-    php81-fpm \
-    php81-gd \
-    php81-iconv \
-    php81-intl \
-    php81-json \
-    php81-openssl \
-    php81-opcache \
-    php81-mbstring \
-    php81-pdo_mysql \
-    php81-phar \
-    php81-session \
-    php81-simplexml \
-    php81-tokenizer \
-    php81-xml \
-    php81-zip
+    php \
+    php-cli \
+    php-bcmath \
+    php-common \
+    php-curl \
+    php-fpm \
+    php-gd \
+    php-iconv \
+    php-intl \
+    php-json \
+    php-mbstring \
+    php-mysql \
+    php-tokenizer \
+    php-xml \
+    php-zip \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-COPY docker/00_docker.ini /etc/php81/conf.d/
-COPY docker/pool.conf /etc/php81/php-fpm.d/www.conf
+COPY docker/ /docker
 
 WORKDIR /srv
 
 # Application
 FROM base AS app
 
+ENV FPM_USER=www-data
+ENV FPM_GROUP=www-data
+ENV FPM_BIN_PATH=/usr/sbin/php-fpm8.4
+
 EXPOSE 9000
-CMD [ "/usr/sbin/php-fpm81", "-F" ]
+CMD [ "/docker/init.sh" ]

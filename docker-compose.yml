@@ -2,7 +2,9 @@ version: "3.5"
 services:
   app:
     build: .
-    user: ${USER_UID}
+    environment:
+      FPM_USER: ${FPM_USER}
+      FPM_GROUP: ${FPM_GROUP}
     volumes:
       - .:/srv:rw
       - ./docker/env:/srv/.env:rw
