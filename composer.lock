@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.360.0",
+            "version": "3.363.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a21055795be59f3d7c5ca6e4d52a80930dcf8c20"
+                "reference": "bcc08c51e133f6b48f4ecb6acb59372b15dda388"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a21055795be59f3d7c5ca6e4d52a80930dcf8c20",
-                "reference": "a21055795be59f3d7c5ca6e4d52a80930dcf8c20",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/bcc08c51e133f6b48f4ecb6acb59372b15dda388",
+                "reference": "bcc08c51e133f6b48f4ecb6acb59372b15dda388",
                 "shasum": ""
             },
             "require": {
@@ -153,22 +153,22 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.360.0"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.363.1"
             },
-            "time": "2025-11-17T19:46:19+00:00"
+            "time": "2025-11-24T19:04:49+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
-            "version": "v3.0.2",
+            "version": "v3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Bacon/BaconQrCode.git",
-                "reference": "fe259c55425b8178f77fb6d1f84ba2473e21ed55"
+                "reference": "36a1cb2b81493fa5b82e50bf8068bf84d1542563"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/fe259c55425b8178f77fb6d1f84ba2473e21ed55",
-                "reference": "fe259c55425b8178f77fb6d1f84ba2473e21ed55",
+                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/36a1cb2b81493fa5b82e50bf8068bf84d1542563",
+                "reference": "36a1cb2b81493fa5b82e50bf8068bf84d1542563",
                 "shasum": ""
             },
             "require": {
@@ -208,9 +208,9 @@
             "homepage": "https://github.com/Bacon/BaconQrCode",
             "support": {
                 "issues": "https://github.com/Bacon/BaconQrCode/issues",
-                "source": "https://github.com/Bacon/BaconQrCode/tree/v3.0.2"
+                "source": "https://github.com/Bacon/BaconQrCode/tree/v3.0.3"
             },
-            "time": "2025-11-16T22:59:48+00:00"
+            "time": "2025-11-19T17:15:36+00:00"
         },
         {
             "name": "brick/math",
@@ -1070,20 +1070,72 @@
             "time": "2025-08-23T21:21:41+00:00"
         },
         {
-            "name": "karmabunny/kb",
-            "version": "v3.58.37",
+            "name": "karmabunny/interfaces",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Karmabunny/kbphp.git",
-                "reference": "a14f2279a76de4a904b22e4f920c9b669077831c"
+                "url": "https://github.com/Karmabunny/kbinterfaces.git",
+                "reference": "32b0489a5681022be70d37512f28603359ad1fbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Karmabunny/kbphp/zipball/a14f2279a76de4a904b22e4f920c9b669077831c",
-                "reference": "a14f2279a76de4a904b22e4f920c9b669077831c",
+                "url": "https://api.github.com/repos/Karmabunny/kbinterfaces/zipball/32b0489a5681022be70d37512f28603359ad1fbb",
+                "reference": "32b0489a5681022be70d37512f28603359ad1fbb",
                 "shasum": ""
             },
             "require": {
+                "php": "^7.2|^8"
+            },
+            "require-dev": {
+                "phpcompatibility/php-compatibility": "^9.3",
+                "phpstan/phpstan": "^2.1",
+                "phpunit/phpunit": "^9.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "karmabunny\\interfaces\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Karmabunny",
+                    "email": "info@karmabunny.com.au"
+                }
+            ],
+            "description": "Base KB interfaces",
+            "keywords": [
+                "interfaces",
+                "karmabunny",
+                "kb",
+                "utilities"
+            ],
+            "support": {
+                "issues": "https://github.com/Karmabunny/kbinterfaces/issues",
+                "source": "https://github.com/Karmabunny/kbinterfaces/tree/v1.0.1"
+            },
+            "time": "2025-11-11T22:47:53+00:00"
+        },
+        {
+            "name": "karmabunny/kb",
+            "version": "v4.58.40",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Karmabunny/kbphp.git",
+                "reference": "4c447063063a4fb3b90654620e1b711debc61bb8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Karmabunny/kbphp/zipball/4c447063063a4fb3b90654620e1b711debc61bb8",
+                "reference": "4c447063063a4fb3b90654620e1b711debc61bb8",
+                "shasum": ""
+            },
+            "require": {
+                "karmabunny/interfaces": "^1.0",
                 "php": "^7.2|^8",
                 "symfony/polyfill-php73": "*",
                 "symfony/polyfill-php81": "^1.26"
@@ -1095,8 +1147,14 @@
             },
             "type": "library",
             "autoload": {
+                "files": [
+                    "compat/bootstrap.php"
+                ],
                 "psr-4": {
-                    "karmabunny\\kb\\": "src/"
+                    "karmabunny\\kb\\": [
+                        "src/",
+                        "compat/"
+                    ]
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1118,29 +1176,29 @@
             ],
             "support": {
                 "issues": "https://github.com/Karmabunny/kbphp/issues",
-                "source": "https://github.com/Karmabunny/kbphp/tree/v3.58.37"
+                "source": "https://github.com/Karmabunny/kbphp/tree/v4.58.40"
             },
-            "time": "2025-10-27T05:23:09+00:00"
+            "time": "2025-11-24T02:25:16+00:00"
         },
         {
             "name": "karmabunny/pdb",
-            "version": "v1.5.7",
+            "version": "v1.6.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Karmabunny/kbpdb.git",
-                "reference": "d930f898d1975a193b93a8681950714d3b0ef25f"
+                "reference": "87d2cb2cdd4ce5d7bf4f6cbd048ffc84cf275daf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Karmabunny/kbpdb/zipball/d930f898d1975a193b93a8681950714d3b0ef25f",
-                "reference": "d930f898d1975a193b93a8681950714d3b0ef25f",
+                "url": "https://api.github.com/repos/Karmabunny/kbpdb/zipball/87d2cb2cdd4ce5d7bf4f6cbd048ffc84cf275daf",
+                "reference": "87d2cb2cdd4ce5d7bf4f6cbd048ffc84cf275daf",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
                 "ext-pdo": "*",
-                "karmabunny/kb": "^3.58",
+                "karmabunny/kb": "^3.58|^4",
                 "php": "^7|^8"
             },
             "require-dev": {
@@ -1188,26 +1246,27 @@
             ],
             "support": {
                 "issues": "https://github.com/Karmabunny/kbpdb/issues",
-                "source": "https://github.com/Karmabunny/kbpdb/tree/v1.5.7"
+                "source": "https://github.com/Karmabunny/kbpdb/tree/v1.6.7"
             },
-            "time": "2025-11-10T06:34:03+00:00"
+            "time": "2025-11-21T06:37:47+00:00"
         },
         {
             "name": "karmabunny/rdb",
-            "version": "v1.29.20",
+            "version": "v1.31.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Karmabunny/kbrdb.git",
-                "reference": "5c5963d515caadd4b7716385ab94b8256f38c837"
+                "reference": "5a4ee0b1cb1aab567c2e4ec8c626c8b219122a84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Karmabunny/kbrdb/zipball/5c5963d515caadd4b7716385ab94b8256f38c837",
-                "reference": "5c5963d515caadd4b7716385ab94b8256f38c837",
+                "url": "https://api.github.com/repos/Karmabunny/kbrdb/zipball/5a4ee0b1cb1aab567c2e4ec8c626c8b219122a84",
+                "reference": "5a4ee0b1cb1aab567c2e4ec8c626c8b219122a84",
                 "shasum": ""
             },
             "require": {
                 "colinmollenhour/credis": "^1",
+                "karmabunny/interfaces": "^1.0",
                 "php": ">=7.2",
                 "predis/predis": "^2.2",
                 "rybakit/msgpack": "^0.9.1",
@@ -1242,27 +1301,27 @@
             ],
             "support": {
                 "issues": "https://github.com/Karmabunny/kbrdb/issues",
-                "source": "https://github.com/Karmabunny/kbrdb/tree/v1.29.20"
+                "source": "https://github.com/Karmabunny/kbrdb/tree/v1.31.20"
             },
-            "time": "2025-08-11T07:22:18+00:00"
+            "time": "2025-11-21T06:22:06+00:00"
         },
         {
             "name": "karmabunny/router",
-            "version": "v2.7.14",
+            "version": "v2.7.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Karmabunny/kbrouter.git",
-                "reference": "e420587f5abd9db62887a9b509d0cf38b4a81b0c"
+                "reference": "ca4e9e38619d4c80450b10f480fa08ae9cbbacf1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Karmabunny/kbrouter/zipball/e420587f5abd9db62887a9b509d0cf38b4a81b0c",
-                "reference": "e420587f5abd9db62887a9b509d0cf38b4a81b0c",
+                "url": "https://api.github.com/repos/Karmabunny/kbrouter/zipball/ca4e9e38619d4c80450b10f480fa08ae9cbbacf1",
+                "reference": "ca4e9e38619d4c80450b10f480fa08ae9cbbacf1",
                 "shasum": ""
             },
             "require-dev": {
                 "phpcompatibility/php-compatibility": "^9.3",
-                "phpstan/phpstan": "^0.12.88",
+                "phpstan/phpstan": "^1",
                 "phpunit/phpunit": "^9.5"
             },
             "type": "library",
@@ -1288,9 +1347,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Karmabunny/kbrouter/issues",
-                "source": "https://github.com/Karmabunny/kbrouter/tree/v2.7.14"
+                "source": "https://github.com/Karmabunny/kbrouter/tree/v2.7.16"
             },
-            "time": "2023-01-31T06:39:42+00:00"
+            "time": "2025-11-24T00:31:30+00:00"
         },
         {
             "name": "karmabunny/visor",
@@ -2974,16 +3033,16 @@
         },
         {
             "name": "sproutcms/cms",
-            "version": "v4.3.40",
+            "version": "v4.3.42",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Karmabunny/sprout3.git",
-                "reference": "3bc5c65d4b3d95a7a6ea05c4cb77d4eda15618a6"
+                "reference": "c79e75263d2816b7d58901c728d42466adf7624b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Karmabunny/sprout3/zipball/3bc5c65d4b3d95a7a6ea05c4cb77d4eda15618a6",
-                "reference": "3bc5c65d4b3d95a7a6ea05c4cb77d4eda15618a6",
+                "url": "https://api.github.com/repos/Karmabunny/sprout3/zipball/c79e75263d2816b7d58901c728d42466adf7624b",
+                "reference": "c79e75263d2816b7d58901c728d42466adf7624b",
                 "shasum": ""
             },
             "require": {
@@ -3003,9 +3062,9 @@
                 "ezyang/htmlpurifier": "^4.17",
                 "giggsey/libphonenumber-for-php": "^8.13",
                 "guzzlehttp/guzzle": "^7.9",
-                "karmabunny/kb": "^3.58",
-                "karmabunny/pdb": "^1.2",
-                "karmabunny/rdb": "^1.26",
+                "karmabunny/kb": "^3.58|^4",
+                "karmabunny/pdb": "^1.6",
+                "karmabunny/rdb": "^1.31",
                 "karmabunny/router": "^2.7.12",
                 "karmabunny/visor": "^1.0",
                 "nette/neon": "^3.4",
@@ -3060,9 +3119,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Karmabunny/sprout3/issues",
-                "source": "https://github.com/Karmabunny/sprout3/tree/v4.3.40"
+                "source": "https://github.com/Karmabunny/sprout3/tree/v4.3.42"
             },
-            "time": "2025-11-12T04:21:29+00:00"
+            "time": "2025-11-25T03:12:52+00:00"
         },
         {
             "name": "sproutcms/module",
