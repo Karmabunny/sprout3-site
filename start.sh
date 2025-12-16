@@ -30,6 +30,11 @@ case "$CMD" in
         exit $?
     ;;
 
+    "composer")
+        $COMPOSE exec app composer $@
+        exit $?
+    ;;
+
     "sprout")
         $COMPOSE exec app php ./web/index.php $@
         exit $?
@@ -49,6 +54,7 @@ case "$CMD" in
         echo "One of:"
         echo " - up [...images]"
         echo " - sprout [...args]"
+        echo " - composer [...args]"
         echo " - shell <image>"
         echo " - sql"
         exit 1
