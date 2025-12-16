@@ -36,7 +36,7 @@ case "$CMD" in
     ;;
 
     "shell"|"sh")
-        $COMPOSE exec $1 sh
+        $COMPOSE exec ${1:-app} sh
         exit $?
     ;;
 
