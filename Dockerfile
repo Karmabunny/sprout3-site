@@ -9,6 +9,7 @@ RUN set -xe \
     gettext-base \
     mariadb-client \
     curl \
+    unzip \
     php \
     php-cli \
     php-bcmath \
