@@ -19,12 +19,16 @@ Requirements
 * Composer 2 or later
 
 
+These requirements are also provided in the `Dockerfile` and compose samples.
+
+
 Getting started
 ---------------
 
 1. Run `composer create-project sproutcms/site`
 2. Run `composer serve`
 3. Browse to http://localhost:8080/
+
 
 
 ### Docker
@@ -34,9 +38,12 @@ A sample docker configuration is also provided.
 This is a basic Nginx + MariaDB + PHP-FPM installation.
 
 ```sh
-composer create-project sproutcms/site
-composer install
+composer create-project sproutcms/site my-project
+cd my-project
+
 ./start.sh up
+# OR
+docker-compose up --build --detach
 ```
 
 > Browse to http://localhost:8080/
